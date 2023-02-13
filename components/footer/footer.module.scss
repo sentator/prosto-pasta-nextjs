@@ -1,0 +1,142 @@
+.footer {
+	padding: 48px 0;
+	background-color: var(--hoverBackgroundColor);
+	@media (max-width: 48em) {
+		padding: 24px 0;
+	}
+}
+.inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	@media (max-width: 62em) {
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+}
+.copyright {
+	@media (max-width: 62em) {
+		order: 2;
+	}
+	@media (max-width: 48em) {
+		order: 3;
+		flex: 1 0 100%;
+		display: flex;
+		gap: 0.5rem 1rem;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}
+.copyrightText {
+	font-size: 1.25rem;
+	line-height: 140%;
+	color: #7e7e7e;
+}
+.policy {
+	font-size: 1.25rem;
+	color: var(--mainDarkColor);
+	transition: color 0.3s ease-in-out;
+	@media (any-hover: hover) {
+		&:hover {
+			color: var(--blue1Color);
+		}
+	}
+	&:focus-visible {
+		outline: 2px solid var(--blue1Color);
+		outline-offset: 2px;
+		border-radius: 6px;
+	}
+	&:active {
+		color: var(--buttonActiveColor);
+		transition: none;
+	}
+}
+.content {
+	@media (max-width: 62em) {
+		order: 1;
+		flex: 1 0 100%;
+	}
+	@media (max-width: 48em) {
+		flex: unset;
+	}
+}
+.ukraine {
+	position: relative;
+	max-width: fit-content;
+	padding-left: 32px;
+	margin: 0 auto 1em;
+	font-size: 1.25rem;
+	line-height: 140%;
+	color: var(--mainDarkColor);
+	white-space: nowrap;
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		content: "";
+		width: 21px;
+		height: 20px;
+		background-image: url(../../assets/images/icons/flag-ukraine.svg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+.menuList {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 28px;
+	@media (max-width: 48em) {
+		flex-direction: column;
+		gap: 5px 20px;
+	}
+}
+
+.menuLink {
+	position: relative;
+	display: block;
+	font-size: 1.25rem;
+	line-height: 140%;
+	color: var(--mainDarkColor);
+	white-space: nowrap;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%) scale(0);
+		width: 90%;
+		height: 2px;
+		background-color: var(--accentColor);
+		transition: transform 0.3s ease-in-out;
+	}
+	@media (any-hover: hover) {
+		&:hover::after {
+			transform: translateX(-50%) scale(1);
+		}
+	}
+	&:focus-visible {
+		outline: 2px solid var(--blue1Color);
+		outline-offset: 2px;
+		border-radius: 6px;
+	}
+}
+.social {
+	@media (max-width: 62em) {
+		order: 3;
+	}
+	@media (max-width: 48em) {
+		align-self: start;
+		order: 2;
+	}
+}
+.socialLabel {
+	font-size: 1.25rem;
+	line-height: 140%;
+	color: var(--mainDarkColor);
+	margin-bottom: 0.4em;
+}

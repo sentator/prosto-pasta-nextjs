@@ -1,0 +1,24 @@
+$fontFamily: "Neucha";
+$mainDarkColor: #282828;
+$accentColor: #ffc10b;
+$accentHoverColor: #ffe434;
+$hoverBackgroundColor: #fff2d6;
+$blue1Color: #0052a1;
+$blue2Color: #c9e8fb;
+$buttonActiveColor: #dd2d18;
+$priceColor: #63291a;
+$errorColor: #e52739;
+
+:export {
+	primaryColor: $primary-color;
+	fontFamily: $fontFamily;
+	mainDarkColor: $mainDarkColor;
+	accentColor: $accentColor;
+	accentHoverColor: $accentHoverColor;
+	hoverBackgroundColor: $hoverBackgroundColor;
+	blue1Color: $blue1Color;
+	blue2Color: $blue2Color;
+	buttonActiveColor: $buttonActiveColor;
+	priceColor: $priceColor;
+	errorColor: $errorColor;
+}
