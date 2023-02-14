@@ -124,19 +124,3 @@ body {
 		transform: rotate(10deg);
 	}
 }
-
-// cart icon shaking on header move
-@keyframes cartIconShaking {
-	0%,
-	100% {
-		transform: translate(-50%, -50%) rotate(0deg);
-	}
-	20%,
-	60% {
-		transform: translate(-50%, -50%) rotate(-15deg);
-	}
-	40%,
-	80% {
-		transform: translate(-50%, -50%) rotate(15deg);
-	}
-}

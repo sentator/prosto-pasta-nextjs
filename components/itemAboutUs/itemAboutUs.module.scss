@@ -1,0 +1,72 @@
+.item-about {
+}
+.button {
+	position: relative;
+	font-size: 1.5rem;
+	padding-right: 24px;
+	white-space: nowrap;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 56%;
+		right: 4px;
+		transform: translateY(-50%) rotate(0);
+		width: 16px;
+		height: 16px;
+		background-image: url(../../assets/images/header/arrow.svg);
+		transition: transform 0.3s ease-in-out;
+	}
+	&.active::after {
+		transform: translateY(-50%) rotate(180deg);
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		height: 2px;
+		width: calc(90% - 24px);
+		background-color: var(--accentColor);
+		border-radius: 10px;
+		transform: translateX(-50%) scale(0);
+		transition: transform 0.3s ease-in-out;
+	}
+	@media (any-hover: hover) {
+		&:hover::before {
+			transform: translateX(-67%) scale(1);
+		}
+	}
+	&:focus-visible {
+		outline: 2px solid var(--accentColor);
+		outline-offset: 2px;
+		border-radius: 6px;
+	}
+}
+.popover :global {
+	.MuiPopover-paper {
+		padding: 20px;
+		border-radius: 32px;
+	}
+}
+.list {
+}
+.item {
+}
+.link {
+	display: block;
+	font-size: 1.5rem;
+	color: var(--mainDarkColor);
+	text-align: center;
+	padding: 8px 20px;
+	border-radius: 32px;
+	transition: background-color 0.3s ease-in-out;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--hoverBackgroundColor);
+		}
+	}
+	&:focus-visible {
+		outline: 2px solid var(--accentColor);
+		outline-offset: 2px;
+	}
+}

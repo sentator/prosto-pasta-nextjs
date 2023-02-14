@@ -1,0 +1,29 @@
+.link {
+	position: relative;
+	display: inline-block;
+	font-size: 1.25rem;
+	color: var(--mainDarkColor);
+	text-decoration: none;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		height: 2px;
+		width: 90%;
+		background-color: var(--accentColor);
+		border-radius: 10px;
+		transform: translateX(-50%) scale(0);
+		transition: transform 0.3s ease-in-out;
+	}
+	@media (any-hover: hover) {
+		&:hover::after {
+			transform: translateX(-50%) scale(1);
+		}
+	}
+	&:focus-visible {
+		outline: 2px solid var(--accentColor);
+		outline-offset: 2px;
+		border-radius: 6px;
+	}
+}
