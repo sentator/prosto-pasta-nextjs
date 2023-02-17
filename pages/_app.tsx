@@ -1,6 +1,10 @@
-import "@/styles/globals.scss";
-import type { AppProps } from "next/app";
 import localFont from "@next/font/local";
+import type { AppProps } from "next/app";
+
+import "@/styles/globals.scss";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
 import {
 	FixedPositionCorrectionContextProvider,

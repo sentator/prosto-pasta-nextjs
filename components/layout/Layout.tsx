@@ -25,15 +25,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
 	return (
 		<>
-			<Header isLarge={inView} isDesktop={isDesktop} />
 			<div className="wrapper">
+				<Header isLarge={inView} isDesktop={isDesktop} />
 				<div className={mainTagClassNames} data-offset={inView}>
 					{/* trigger element for the intersection observer instance (connected with the Header) */}
 					<div className="main__trigger" ref={ref} aria-hidden="true"></div>
 					{children}
 				</div>
+				<Footer />
 			</div>
-			<Footer />
 		</>
 	);
 };
