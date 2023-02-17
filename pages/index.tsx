@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 
 import FirstScreen from "@/components/firstScreen/FirstScreen";
 
