@@ -10,9 +10,16 @@
 		border-bottom: 1px solid rgba(169, 169, 169, 0.2);
 		.inner {
 			min-height: 4.2em;
+			@media (max-width: 48em) {
+				min-height: 3.2em;
+				max-height: 3.2em;
+			}
 		}
 		.logo {
 			width: 80px;
+			@media (max-width: 48em) {
+				width: 60px;
+			}
 		}
 	}
 }
@@ -73,16 +80,15 @@
 	display: block;
 	width: 120px;
 	transition: width 0.3s ease-in-out;
-	@media (max-width: 62em) {
-		width: 80px;
-	}
 	&:focus-visible {
 		outline: 2px solid var(--accentColor);
 		outline-offset: 2px;
 		border-radius: 6px;
 	}
-	// .logo__image
-	&__image {
-		width: 100%;
+	img {
+		max-width: 100%;
+	}
+	@media (max-width: 62em) {
+		width: 80px;
 	}
 }

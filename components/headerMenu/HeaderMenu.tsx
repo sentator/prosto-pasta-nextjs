@@ -39,7 +39,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = ({ enableCorrection, disableCorrec
 	};
 
 	return (
-		<div className={styles["header-menu"]}>
+		<>
 			<button
 				className={buttonClassnames}
 				onClick={handleClick}
@@ -116,7 +116,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = ({ enableCorrection, disableCorrec
 					</li>
 				</ul>
 			</Popover>
-		</div>
+		</>
 	);
 };
 

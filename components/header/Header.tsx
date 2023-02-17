@@ -78,7 +78,7 @@ const Header: React.FC<IHeaderProps> = ({ isLarge, isDesktop }) => {
 						<HeaderMenu enableCorrection={enableCorrection} disableCorrection={disableCorrection} />
 						<div className={styles.logo}>
 							<Link className={styles.logo} href="/" aria-label="go to homepage" onClick={scrollToTop}>
-								<Image className={styles["logo__image"]} src={logo} alt="лого Просто Паста" />
+								<Image src={logo} alt="лого Просто Паста" />
 							</Link>
 						</div>
 						<ButtonCart isHeaderScrolled={!isLarge} />
