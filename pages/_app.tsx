@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 // -------------- quick global styling instead of CSS module usage. REPLACE it to CSS modules soon
+
 import "@/styles/temporaryCSSModulesReplacement.scss";
 // ---------------------
 
