@@ -3,6 +3,7 @@ import FixedPositionCorrectionContextProvider, {
 } from "./fixedPositionCorrectionContext";
 import ScrollLockContextProvider, { scrollLockContext } from "./scrollLockContext";
 import ViewportWidthContextProvider, { viewportWidthContext } from "./viewportWidthContext";
+import CartVisibilityContextProvider, { cartVisibilityContext } from "./cartVisibilityContext";
 
 export {
 	fixedPositionCorrectionContext,
@@ -11,4 +12,6 @@ export {
 	ScrollLockContextProvider,
 	viewportWidthContext,
 	ViewportWidthContextProvider,
+	cartVisibilityContext,
+	CartVisibilityContextProvider,
 };

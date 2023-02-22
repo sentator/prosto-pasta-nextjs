@@ -75,7 +75,13 @@ const MainSlider: React.FC = React.memo(() => {
 			{slides.map(({ link, src, alt }) => (
 				<SwiperSlide className={styles.slide} key={alt}>
 					<Link className={styles.link} href={link}>
-						<Image className={styles.image} src={src} alt={alt} fill />
+						<Image
+							className={styles.image}
+							src={src}
+							alt={alt}
+							fill
+							sizes="(max-width: 30em) 80vw, 100vw"
+						/>
 					</Link>
 				</SwiperSlide>
 			))}

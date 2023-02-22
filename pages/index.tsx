@@ -1,6 +1,9 @@
 import Head from "next/head";
 
+import { getProducts, getRunningQueriesThunk } from "../services/mockApi";
+import { wrapper } from "@/redux/store";
 import FirstScreen from "@/components/firstScreen/FirstScreen";
+import SectionProducts from "@/components/sectionProducts/SectionProducts";
 
 export default function HomePage() {
 	return (
@@ -13,6 +16,16 @@ export default function HomePage() {
 				/>
 			</Head>
 			<FirstScreen />
+			<SectionProducts sectionTitle="Наші хіти" buttonTitle="Повний каталог" />
 		</main>
 	);
 }
+
+export const getServerSideProps = wrapper.getServerSideProps((store) => async (context) => {
+	store.dispatch(getProducts.initiate({ page: 1, limit: 10 }));
+	await Promise.all(store.dispatch(getRunningQueriesThunk()));
+
+	return {
+		props: {},
+	};
+});
