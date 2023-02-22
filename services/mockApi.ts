@@ -16,7 +16,9 @@ interface IGetProductsArguments {
 
 export const mockApi = createApi({
 	reducerPath: "mockApi",
-	baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_APP_MOCKAPI_URL }),
+	baseQuery: fetchBaseQuery({
+		baseUrl: process.env.NEXT_PUBLIC_APP_MOCKAPI_URL || process.env.NEXT_PUBLIC_MOCKAPIURL,
+	}),
 	extractRehydrationInfo(action, { reducerPath }) {
 		if (action.type === HYDRATE) {
 			return action.payload[reducerPath];
