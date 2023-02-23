@@ -51,6 +51,7 @@ const ProductUserActions: React.FC<ProductUserActionsProps> = ({
 				</button>
 			</div>
 			<AddToCartButton
+				className="user-actions__button"
 				isInCart={isInCart}
 				handleAddToCart={handleAddToCart}
 				isAdding={isAddingToCart}

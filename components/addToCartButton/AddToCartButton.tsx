@@ -7,19 +7,30 @@ import Button from "../button/Button";
 // import styles from "./addToCartButton.module.scss";
 
 interface AddToCartButtonProps {
+	className?: string;
 	isInCart: boolean;
 	handleAddToCart: () => void;
 	isAdding: boolean;
 	setAdding: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AddToCartButton: React.FC<AddToCartButtonProps> = ({ isInCart, handleAddToCart, isAdding, setAdding }) => {
+const AddToCartButton: React.FC<AddToCartButtonProps> = ({
+	className = "",
+	isInCart,
+	handleAddToCart,
+	isAdding,
+	setAdding,
+}) => {
 	const [isAdded, setAdded] = React.useState<boolean>(isInCart);
 
 	const { isMobile } = React.useContext(viewportWidthContext);
 	const { showCart } = React.useContext(cartVisibilityContext);
 
-	const buttonClassnames = classNames("add-to-cart-button", { adding: isAdding, added: isAdded, mobile: isMobile });
+	const buttonClassnames = classNames(className, "add-to-cart-button", {
+		adding: isAdding,
+		added: isAdded,
+		mobile: isMobile,
+	});
 
 	const handleClick = (): void => {
 		setAdding(true);
@@ -31,7 +42,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ isInCart, handleAddTo
 	};
 
 	if (!isAdding && isInCart && isAdded) {
-		return <Button className="user-actions__button" title="Замовити" onClick={showCart} />;
+		return <Button className={className} title="Замовити" onClick={showCart} />;
 	}
 
 	return (
