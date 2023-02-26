@@ -24,6 +24,7 @@ import Layout from "../components/layout/Layout";
 export const myFont = localFont({
 	src: "../public/fonts/Neucha.woff2",
 	// variable: "--font-family"
+	display: "swap",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
