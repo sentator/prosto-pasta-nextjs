@@ -2,10 +2,11 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import classnames from "clsx";
 
-import { viewportWidthContext } from "@/context";
+import { viewportWidthContext, cartVisibilityContext } from "@/context";
 
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import CartDrawer from "../cartDrawer/CartDrawer";
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -17,10 +18,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 		threshold: 1,
 		initialInView: true,
 	});
+	const { isCartOpened, hideCart } = React.useContext(cartVisibilityContext);
 
-	// --------
-	const isCartOpened = false;
-	// --------
 	const mainTagClassNames = classnames("main", { blured: isCartOpened });
 
 	return (
@@ -33,6 +32,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 					{children}
 				</div>
 				<Footer />
+				<CartDrawer isOpened={isCartOpened} onClose={hideCart} />
 			</div>
 		</>
 	);

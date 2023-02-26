@@ -124,3 +124,13 @@ body {
 		transform: rotate(10deg);
 	}
 }
+
+// for applying the scroll snap for a sections of the homepage soon
+// .scroll-container {
+// 	scroll-snap-type: y mandatory;
+// 	overflow-y: scroll;
+// 	height: 100vh;
+// }
+// .scroll-container__item {
+// 	scroll-snap-align: start;
+// }

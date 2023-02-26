@@ -1,0 +1,50 @@
+@import "../../assets/styles/variables.scss";
+.cart-empty {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	// .cart-empty__image
+	&__image {
+		max-width: 30rem;
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: 30em) {
+			max-width: 20rem;
+			margin: 0 auto;
+		}
+	}
+	// .cart-empty__message
+	&__message {
+		font-size: 3rem;
+		line-height: 112%;
+		color: $mainDarkColor;
+		@media (max-width: 30em) {
+			font-size: 2.5rem;
+			text-align: center;
+		}
+	}
+	// .cart-empty__btn
+	&__btn {
+	}
+}
+.cartEmptyTransition {
+	&-enter,
+	&-appear {
+		transform: translateX(100%);
+	}
+	&-enter-active,
+	&-appear-active {
+		transform: translateX(0);
+		transition: transform 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+	}
+	&-exit {
+		transform: translateX(0);
+	}
+	&-exit-active {
+		transform: translateX(100%);
+		transition: transform 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+	}
+}

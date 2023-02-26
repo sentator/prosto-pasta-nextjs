@@ -1,0 +1,107 @@
+.crunches-select {
+	width: 100%;
+	// .crunches-select__button
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1em;
+		width: 100%;
+		padding: 0.67em 1em;
+		background-color: var(--hoverBackgroundColor);
+		border-radius: 1.33em;
+		font-size: 1.5rem;
+		color: var(--mainDarkColor);
+		transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--accentHoverColor);
+				color: var(--blue1Color);
+			}
+		}
+		svg {
+			color: inherit;
+			transition: transform 0.3s ease-in-out;
+		}
+		&.active {
+			background-color: var(--accentHoverColor);
+			color: var(--blue1Color);
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+		&:active {
+			color: var(--buttonActiveColor);
+			transition: color 0.1s ease-in-out;
+		}
+		&:focus-visible {
+			outline: 2px solid var(--blue1Color);
+			outline-offset: 2px;
+		}
+		&:disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+		@media (max-width: 48em) {
+			font-size: 1.25rem;
+		}
+	}
+	// .crunches-select__popover
+	&__popover {
+		.MuiPaper-root {
+			border-radius: 1.6em;
+			padding: 0.5em;
+		}
+	}
+	// .crunches-select__list
+	&__list {
+	}
+	// .crunches-select__item
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+	// .crunches-select__item-button
+	&__item-button {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		gap: 0.5em;
+		padding: 0.5em;
+		font-size: 1.5rem;
+		border-radius: 1.33em;
+		transition: background-color 0.3s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--hoverBackgroundColor);
+			}
+		}
+		&:active {
+			color: var(--buttonActiveColor);
+			transition: color 0.1s ease-in, background-color 0.3s ease-in-out;
+		}
+		&:focus-visible {
+			outline: 2px solid var(--accentColor);
+		}
+		&[data-selected="true"] {
+			background-color: var(--hoverBackgroundColor);
+		}
+		@media (max-width: 48em) {
+			font-size: 1.25rem;
+		}
+	}
+	// .crunches-select__item-img
+	&__item-img {
+		max-width: 2.5rem;
+		max-height: 2.5rem;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 50%;
+	}
+	// .crunches-select__item-title
+	&__item-title {
+	}
+}

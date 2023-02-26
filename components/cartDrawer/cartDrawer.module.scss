@@ -1,0 +1,212 @@
+@import "../../assets/styles/variables.scss";
+.cart-drawer {
+	position: fixed;
+	inset: 0;
+	z-index: 6;
+	// .cart-drawer__backdrop
+	&__backdrop {
+		position: absolute;
+		inset: 0;
+		background-color: rgba($mainDarkColor, 0.3);
+	}
+	// .cart-drawer__body
+	&__body {
+		position: relative;
+		z-index: 1;
+		margin-left: auto;
+		width: 100%;
+		height: 100%;
+		max-width: 40rem;
+		padding: 60px;
+		background-color: $hoverBackgroundColor;
+		box-shadow: -8px 0px 32px rgba(133, 99, 0, 0.12);
+		@media (max-width: 62em) {
+			padding: 30px;
+			overflow-y: auto;
+			overflow-x: clip;
+		}
+		@media (max-width: 40em) {
+			padding: 20px;
+		}
+		@media (max-width: 30em) {
+			padding: 0px;
+		}
+	}
+}
+.cart {
+	display: flex;
+	flex-direction: column;
+	outline: none;
+	height: 100%;
+	// .cart__header
+	&__header {
+		display: grid;
+		grid-template-columns: 56px 1fr;
+		gap: 5px 20px;
+		align-items: flex-start;
+		margin-bottom: 1.5em;
+		@media (max-width: 30em) {
+			padding: 1rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+	// .cart__btn-close
+	&__btn-close {
+		grid-row: 1 / 3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 56px;
+		height: 56px;
+		border-radius: 50%;
+		background-color: $accentColor;
+		color: $mainDarkColor;
+		transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $accentHoverColor;
+			}
+		}
+		&:active {
+			color: $buttonActiveColor;
+			transition: background-color 0.3s ease-in-out, color 0.1s ease-in-out;
+		}
+		&:focus-visible {
+			outline: 2px solid $blue1Color;
+			outline-offset: 2px;
+		}
+		svg {
+			color: inherit;
+		}
+	}
+	// .cart__title
+	&__title {
+		grid-column: 2 / 3;
+		grid-row: span 1;
+		justify-self: flex-end;
+		font-size: 4rem;
+		line-height: 112%;
+		color: $mainDarkColor;
+		@media (max-width: 48em) {
+			font-size: 3rem;
+		}
+	}
+	// .cart__quantity
+	&__quantity {
+		grid-column: 2 / 3;
+		grid-row: span 1;
+		justify-self: flex-end;
+		font-size: 1.25rem;
+	}
+	// .cart__body
+	&__body {
+		position: relative;
+		flex: 1 1 auto;
+		margin-right: -48px;
+		padding-right: 48px;
+		&::after {
+			position: absolute;
+			content: "";
+			bottom: 0;
+			left: 0;
+			width: calc(100% - 48px);
+			height: 3.5rem;
+			background: linear-gradient(0deg, #fff2d6 0%, rgba(255, 242, 214, 0) 100%);
+			pointer-events: none;
+			transform-origin: bottom;
+			transition: transform 0.1s ease-in-out;
+			@media (max-width: 62em) {
+				width: calc(100% - 20px);
+			}
+			@media (max-width: 62em) {
+				display: none;
+			}
+		}
+		.os-theme-dark.os-scrollbar .os-scrollbar-track .os-scrollbar-handle {
+			background-color: $accentColor;
+		}
+		.os-theme-dark.os-scrollbar.os-scrollbar-interaction .os-scrollbar-track .os-scrollbar-handle {
+			filter: brightness(0.7);
+		}
+		&[data-endscrolled="true"] {
+			&::after {
+				transform: scaleY(0);
+				transition: transform 0.05s ease-in-out;
+			}
+		}
+		@media (max-width: 62em) {
+			margin-right: -20px;
+			padding-right: 20px;
+		}
+	}
+	// .cart__empty
+	&__empty {
+	}
+	// .cart__list
+	&__list {
+	}
+	// .cart__footer
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		padding: 32px 0 0;
+		@media (max-width: 62em) {
+			padding: 32px 0;
+		}
+		@media (max-width: 30em) {
+			padding: 1rem;
+		}
+	}
+	// .cart__total-price
+	&__total-price {
+		align-self: flex-start;
+		font-size: 4rem;
+		span {
+			color: $priceColor;
+		}
+		@media (max-width: 48em) {
+			font-size: 3rem;
+		}
+	}
+	// .cart__btn-submit
+	&__btn-submit {
+	}
+}
+.cart-backdrop-transition {
+	&-enter,
+	&-appear {
+		opacity: 0;
+	}
+	&-enter-active,
+	&-appear-active {
+		opacity: 1;
+		transition: opacity 0.3s ease-in-out;
+	}
+	&-exit {
+		opacity: 1;
+	}
+	&-exit-active {
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+}
+.cart-body-transition {
+	&-enter,
+	&-appear {
+		transform: translateX(100%);
+	}
+	&-enter-active,
+	&-appear-active {
+		transform: translateX(0);
+		transition: transform 0.3s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+	}
+	&-exit {
+		transform: translateX(0);
+	}
+	&-exit-active {
+		transform: translateX(100%);
+		transition: transform 0.3s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+	}
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "clsx";
 
-// import { cartVisibilityContext } from "../../context";
-// import { useAppSelector } from "../../hooks";
+import { cartVisibilityContext } from "../../context";
+import { useAppSelector } from "../../hooks";
 
 import styles from "./buttonCart.module.scss";
 
@@ -11,17 +11,12 @@ interface ButtonCartProps {
 }
 
 const ButtonCart: React.FC<ButtonCartProps> = ({ isHeaderScrolled = false }) => {
-	// const { showCart } = React.useContext(cartVisibilityContext);
-	// const itemsInCart = useAppSelector((state) => state.cart.totalQuantity);
-
-	// --------------
-	const showCart = () => {};
-	const itemsInCart = 3;
-	// --------------
+	const { showCart } = React.useContext(cartVisibilityContext);
+	const itemsInCart = useAppSelector((state) => state.cart.totalQuantity);
 
 	const btnIconClassnames = classNames(styles.icon, { [styles.shaking]: isHeaderScrolled });
 	const btnQuantityClassnames = classNames(styles.quantity, {
-		visible: !!itemsInCart,
+		[styles.visible]: !!itemsInCart,
 	});
 
 	return (

@@ -1,0 +1,100 @@
+.cart-item-actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	// .cart-item-actions__counter
+	&__counter {
+		flex: 1 1 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		min-height: 3.75rem;
+		padding: 0.5em;
+		border-radius: 2rem;
+		background-color: var(--hoverBackgroundColor);
+		@media (max-width: 48em) {
+			min-height: 3.25rem;
+			padding: 0.25em;
+		}
+	}
+	// .cart-item-actions__counter-button
+	&__counter-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 50%;
+		background-color: transparent;
+		color: var(--mainDarkColor);
+		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--accentHoverColor);
+			}
+		}
+		&:focus-visible {
+			outline: 2px solid var(--blue1Color);
+			background-color: var(--accentHoverColor);
+		}
+		&:disabled {
+			pointer-events: none;
+			color: rgba(var(--mainDarkColor, 0.3));
+		}
+		&:active {
+			color: var(--buttonActiveColor);
+			transition: background-color 0.3s ease-in-out;
+		}
+		svg {
+			color: inherit;
+		}
+	}
+	// .cart-item-actions__counter-input
+	&__counter-input {
+		margin: 0 0.25rem;
+		width: 2rem;
+		height: 2rem;
+		border: none;
+		background-color: transparent;
+		font-size: 1.5rem;
+		color: var(--mainDarkColor);
+		text-align: center;
+		pointer-events: none;
+	}
+	// .cart-item-actions__btn-remove
+	&__btn-remove {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 4.5rem;
+		height: 3.75rem;
+		border-radius: 2rem;
+		background-color: var(--accentColor);
+		color: var(--mainDarkColor);
+		transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--accentHoverColor);
+				color: var(--blue1Color);
+			}
+		}
+		&:active {
+			color: var(--buttonActiveColor);
+			transition: none;
+		}
+		&:focus-visible {
+			outline: 2px solid var(--blue1Color);
+			outline-offset: 2px;
+		}
+		svg {
+			color: inherit;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+		@media (max-width: 48em) {
+			height: 3.25rem;
+			width: 4rem;
+		}
+	}
+}
