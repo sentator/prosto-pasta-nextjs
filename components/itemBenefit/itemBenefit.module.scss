@@ -1,0 +1,30 @@
+.item-benefit {
+	max-width: 17rem;
+	position: relative;
+	@media (max-width: 48em) {
+		max-width: unset;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 32px;
+		height: 32px;
+		background-color: var(--blue1Color);
+		border-radius: 8px;
+		opacity: 0.6;
+	}
+	padding: 60px 0 0;
+	&__title {
+		font-size: 2rem;
+		line-height: 125%;
+		color: var(--blue1Color);
+		margin-bottom: 0.25em;
+	}
+	&__description {
+		font-size: 1.25rem;
+		line-height: 140%;
+		color: var(--mainDarkColor);
+	}
+}
