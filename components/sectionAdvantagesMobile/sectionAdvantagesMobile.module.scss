@@ -1,0 +1,34 @@
+.section-advantages-mobile {
+	padding: 40px 0;
+	text-align: center;
+	// .section-advantages-mobile__inner
+	&__inner {
+	}
+	// .section-advantages-mobile__title
+	&__title {
+	}
+	// .section-advantages-mobile__subtitle
+	&__subtitle {
+		font-size: 1.5rem;
+		margin-bottom: 1.25em;
+	}
+	// .section-advantages-mobile__image
+	&__image {
+	}
+	// .section-advantages-mobile__list
+	&__list {
+		display: grid;
+		gap: 1em;
+		overflow: hidden;
+		margin-bottom: 1.25em;
+	}
+	// .section-advantages-mobile__item
+	&__item {
+		&:nth-child(even) {
+			justify-self: flex-end;
+		}
+	}
+	// .section-advantages-mobile__button
+	&__button {
+	}
+}

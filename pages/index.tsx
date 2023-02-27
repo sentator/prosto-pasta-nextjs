@@ -1,11 +1,16 @@
+import React from "react";
 import Head from "next/head";
 
 import { getProducts, getRunningQueriesThunk } from "../services/mockApi";
 import { wrapper } from "@/redux/store";
+import { viewportWidthContext } from "@/context";
 import FirstScreen from "@/components/firstScreen/FirstScreen";
 import SectionProducts from "@/components/sectionProducts/SectionProducts";
+import SectionAdvantages from "@/components/sectionAdvantages/SectionAdvantages";
+import SectionAdvantagesMobile from "@/components/sectionAdvantagesMobile/SectionAdvantagesMobile";
 
 export default function HomePage() {
+	const { isMobile } = React.useContext(viewportWidthContext);
 	return (
 		<main>
 			<Head>
@@ -17,6 +22,7 @@ export default function HomePage() {
 			</Head>
 			<FirstScreen />
 			<SectionProducts sectionTitle="Наші хіти" buttonTitle="Повний каталог" />
+			{isMobile ? <SectionAdvantagesMobile /> : <SectionAdvantages />}
 		</main>
 	);
 }
