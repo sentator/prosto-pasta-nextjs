@@ -80,8 +80,7 @@ const MainSlider: React.FC = React.memo(() => {
 							src={src}
 							alt={alt}
 							fill
-							sizes="(max-width: 30em) 80vw, 100vw"
-							priority
+							sizes="(max-width: 30em) 100vw,(max-width: 62em) 40vw, 20vw"
 						/>
 					</Link>
 				</SwiperSlide>
