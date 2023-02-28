@@ -89,11 +89,13 @@ const MainSlider: React.FC = React.memo(() => {
 				className={classNames(styles["btn-prev"], "swiper-button-prev")}
 				ref={btnPrevRef}
 				onClick={() => swiperRef.current?.slidePrev()}
+				aria-label="previous slide"
 			></button>
 			<button
 				className={classNames(styles["btn-next"], "swiper-button-next")}
 				ref={btnNextRef}
 				onClick={() => swiperRef.current?.slideNext()}
+				aria-label="next slide"
 			></button>
 		</Swiper>
 	);

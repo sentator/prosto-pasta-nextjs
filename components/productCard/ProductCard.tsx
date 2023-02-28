@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { IProduct } from "../../types";
 import { IUseCounterProductData } from "../../hooks/useCounter";
@@ -29,10 +30,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, title, labels, image, pri
 		<article className="product-card">
 			<Link className="product-card__top" href={`/products/${id}`}>
 				<div className="product-card__image">
-					<picture>
-						<source srcSet={image.webp} type="image/webp" />
-						<img src={image.src} alt={title} />
-					</picture>
+					<Image
+						src={image.src}
+						alt={title}
+						fill
+						sizes="(max-width: 30em) 100vw ,(max-width: 48em) 50vw,(max-width: 62em) 40vw, 33vw"
+						quality={100}
+					/>
 				</div>
 				{labels && (
 					<div className="product-card__labels">

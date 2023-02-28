@@ -10,14 +10,13 @@
 		border-bottom: 1px solid rgba(169, 169, 169, 0.2);
 		.inner {
 			min-height: 4.2em;
-			@media (max-width: 48em) {
-				min-height: 3.2em;
-				max-height: 3.2em;
+			@media (max-width: 30em) {
+				min-height: unset;
 			}
 		}
 		.logo {
 			width: 80px;
-			@media (max-width: 48em) {
+			@media (max-width: 30em) {
 				width: 60px;
 			}
 		}
@@ -34,6 +33,10 @@
 	transition: min-height 0.3s ease-in-out;
 	@media (max-width: 62em) {
 		min-height: 4.2em;
+	}
+	@media (max-width: 30em) {
+		min-height: unset;
+		height: 3.2em;
 	}
 }
 // .header__list
@@ -85,10 +88,13 @@
 		outline-offset: 2px;
 		border-radius: 6px;
 	}
-	img {
+	svg {
 		max-width: 100%;
 	}
 	@media (max-width: 62em) {
 		width: 80px;
+	}
+	@media (max-width: 30em) {
+		width: 60px;
 	}
 }
