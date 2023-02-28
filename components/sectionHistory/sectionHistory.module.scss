@@ -1,0 +1,33 @@
+.section-history {
+	padding-bottom: 120px;
+	@media (max-width: 48em) {
+		padding-bottom: 40px;
+	}
+	// .section-history__inner
+	&__inner {
+		text-align: center;
+	}
+	// .section-history__title
+	&__title {
+		margin-bottom: 0.125em;
+	}
+	// .section-history__content
+	&__content {
+		max-width: 57rem;
+		margin: 0 auto 2em;
+		font-size: 1.25rem;
+		line-height: 140%;
+		@media (max-width: 48em) {
+			margin: 0 auto 1.25em;
+		}
+	}
+	// .section-history__text
+	&__text {
+		&:not(:last-child) {
+			margin-bottom: 0.5em;
+		}
+	}
+	// .section-history__button
+	&__button {
+	}
+}

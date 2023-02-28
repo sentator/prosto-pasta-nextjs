@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { NextPage } from "next";
 
 import { getProducts, getRunningQueriesThunk } from "../services/mockApi";
 import { wrapper } from "@/redux/store";
@@ -10,8 +11,10 @@ import SectionAdvantages from "@/components/sectionAdvantages/SectionAdvantages"
 import SectionAdvantagesMobile from "@/components/sectionAdvantagesMobile/SectionAdvantagesMobile";
 import SectionBenefits from "@/components/sectionBenefits/SectionBenefits";
 import SectionPhotos from "@/components/sectionPhotos/SectionPhotos";
+import SectionHistory from "@/components/sectionHistory/SectionHistory";
+import SectionFeedback from "@/components/sectionFeedback/SectionFeedback";
 
-export default function HomePage() {
+const HomePage: NextPage = () => {
 	const { isMobile } = React.useContext(viewportWidthContext);
 	return (
 		<main>
@@ -27,9 +30,11 @@ export default function HomePage() {
 			{isMobile ? <SectionAdvantagesMobile /> : <SectionAdvantages />}
 			<SectionBenefits />
 			<SectionPhotos />
+			<SectionHistory />
+			<SectionFeedback />
 		</main>
 	);
-}
+};
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async (context) => {
 	store.dispatch(getProducts.initiate({ page: 1, limit: 10 }));
@@ -39,3 +44,5 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async (c
 		props: {},
 	};
 });
+
+export default HomePage;
