@@ -208,14 +208,14 @@ const SectionBenefits: React.FC = () => {
 									alt="empty plate"
 									fill
 									sizes="(max-width: 30em) 100vw, (max-width: 62em) 50vw, 100vw"
-									quality={100}
 								/>
 								<Image
 									className="image-plate__full-plate"
 									src={fullPlateImage}
 									alt="sandwich with a butter"
 									fill
-									sizes="(max-width: 30em) 100vw, (max-width: 62em) 50vw, 100vw"
+									sizes="(max-width: 30em) 100vw, (max-width: 62em) 50vw, 33vw"
+									quality={100}
 								/>
 							</div>
 						</li>

@@ -9,6 +9,7 @@ import SectionProducts from "@/components/sectionProducts/SectionProducts";
 import SectionAdvantages from "@/components/sectionAdvantages/SectionAdvantages";
 import SectionAdvantagesMobile from "@/components/sectionAdvantagesMobile/SectionAdvantagesMobile";
 import SectionBenefits from "@/components/sectionBenefits/SectionBenefits";
+import SectionPhotos from "@/components/sectionPhotos/SectionPhotos";
 
 export default function HomePage() {
 	const { isMobile } = React.useContext(viewportWidthContext);
@@ -25,6 +26,7 @@ export default function HomePage() {
 			<SectionProducts sectionTitle="Наші хіти" buttonTitle="Повний каталог" />
 			{isMobile ? <SectionAdvantagesMobile /> : <SectionAdvantages />}
 			<SectionBenefits />
+			<SectionPhotos />
 		</main>
 	);
 }
