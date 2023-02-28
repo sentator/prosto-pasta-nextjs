@@ -1709,7 +1709,8 @@
 				align-self: center;
 			}
 			@media (max-width: 30em) {
-				display: none;
+				grid-row: 1 / 2;
+				grid-column: 1 / 3;
 			}
 		}
 		&:nth-child(6) {
@@ -1738,6 +1739,11 @@
 		width: 200px;
 		height: 200px;
 	}
+	@media (max-width: 30em) {
+		width: 290px;
+		height: 290px;
+	}
+
 	// .image-plate__full-plate
 	&__full-plate {
 		-webkit-mask-image: url(../assets/images/section-benefits/mask.png);

@@ -22,22 +22,35 @@ const SectionBenefits: React.FC = () => {
 
 			if (isMobile) {
 				timeline = gsap.context(() => {
-					gsap.timeline().from(".section-benefits__item", {
-						x: 100,
-						y: 100,
-						snap: "x,y",
-						opacity: 0,
-						ease: "power2.out",
-						stagger: 0.2,
-						scrollTrigger: {
-							trigger: listContainerRef.current,
-							toggleActions: "restart pause restart pause",
-							start: "top 80%",
-							end: "bottom 80%",
-							scrub: 2,
-							once: true,
-						},
-					});
+					gsap.timeline()
+						.to(".image-plate__full-plate", {
+							ease: "steps(7)",
+							maskPosition: "100%",
+							webkitMaskPosition: "100%",
+							scrollTrigger: {
+								trigger: listContainerRef.current,
+								toggleActions: "restart pause restart pause",
+								start: "25% 80%",
+								end: "55% 80%",
+								scrub: 2,
+							},
+						})
+						.from(".section-benefits__item:not(:nth-child(5))", {
+							x: 100,
+							y: 100,
+							snap: "x,y",
+							opacity: 0,
+							ease: "power2.out",
+							stagger: 0.2,
+							scrollTrigger: {
+								trigger: listContainerRef.current,
+								toggleActions: "restart pause restart pause",
+								start: "top 80%",
+								end: "bottom 80%",
+								scrub: 2,
+								once: true,
+							},
+						});
 				}, listContainerRef.current);
 			} else {
 				timeline = gsap.context(() => {
@@ -194,7 +207,7 @@ const SectionBenefits: React.FC = () => {
 									src={emptyPlateImage}
 									alt="empty plate"
 									fill
-									sizes="(max-width: 62em) 50vw, 100vw"
+									sizes="(max-width: 30em) 100vw, (max-width: 62em) 50vw, 100vw"
 									quality={100}
 								/>
 								<Image
@@ -202,7 +215,7 @@ const SectionBenefits: React.FC = () => {
 									src={fullPlateImage}
 									alt="sandwich with a butter"
 									fill
-									sizes="(max-width: 62em) 50vw, 100vw"
+									sizes="(max-width: 30em) 100vw, (max-width: 62em) 50vw, 100vw"
 								/>
 							</div>
 						</li>
